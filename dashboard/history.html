@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Enterprise DashBoard</title>
+    <meta
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+      name="viewport"
+    />
+    <link
+      rel="icon"
+      href="assets/img/kaiadmin/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Fonts and icons -->
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: ["assets/css/fonts.min.css"],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="assets/css/demo.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <!-- Sidebar -->
+      <div class="sidebar" data-background-color="dark">
+        <div class="sidebar-logo">
+          <!-- Logo Header -->
+          <div class="logo-header" data-background-color="dark">
+            <a href="index.html" class="logo">
+              <img
+                src="/enterprise/assets/img/logo/logo.png"
+                alt="navbar brand"
+                class="navbar-brand"
+                height="20"
+              />
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+            </div>
+            <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+            </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+          <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+              <li class="nav-item">
+                <a href="/dashboard/index.html">
+                  <i class="fas fa-home"></i>
+                  <p>DashBoard</p>
+                </a>
+              </li>
+              <li class="nav-section">
+                <span class="sidebar-mini-icon">
+                  <i class="fa fa-ellipsis-h"></i>
+                </span>
+              </li>
+              <li class="nav-item">
+                <a href="/dashboard/createjobpost.html">
+                  <i class="fas fa-briefcase"></i>
+                  <p>Create Job Posts</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/dashboard/resumeshortlisting.html">
+                  <i class="fas fa-file-alt"></i>
+                  <p>Resume Shortlisting</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#forms">
+                  <i class="fas fa-calendar-check"></i> 
+                  <p>Test Scheduling</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#tables">
+                  <i class="fas fa-comments"></i>
+                  <p>Interview Scheduling</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/dashboard/createofferletter.html">
+                  <i class="fas fa-file-signature"></i>
+                  <p>Create Offer letter&nbsp;/</br>Joining Letter</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="history.html">
+                  <i class="fas fa-history"></i>
+                  <p>history</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/enterprise/index.html">
+                  <i class="fas fa-sign-out-alt"></i> 
+                  <p>Logout</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- End Sidebar -->
+
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            <!-- Logo Header -->
+            <div class="logo-header" data-background-color="dark">
+              <a href="index.html" class="logo">
+                <img
+                  src="assets/img/kaiadmin/logo_light.svg"
+                  alt="navbar brand"
+                  class="navbar-brand"
+                  height="20"
+                />
+              </a>
+              <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                  <i class="gg-menu-right"></i>
+                </button>
+                <button class="btn btn-toggle sidenav-toggler">
+                  <i class="gg-menu-left"></i>
+                </button>
+              </div>
+              <button class="topbar-toggler more">
+                <i class="gg-more-vertical-alt"></i>
+              </button>
+            </div>
+            <!-- End Logo Header -->
+          </div>
+          <!-- Navbar Header -->
+          <nav
+            class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom"
+          >
+            <div class="container-fluid">
+              <nav
+                class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex"
+              >
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <button type="submit" class="btn btn-search pe-1">
+                      <i class="fa fa-search search-icon"></i>
+                    </button>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Search ..."
+                    class="form-control"
+                  />
+                </div>
+              </nav>
+
+              <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+                <li
+                  class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none"
+                >
+                  <a
+                    class="nav-link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    href="#"
+                    role="button"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                  >
+                    <i class="fa fa-search"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-search animated fadeIn">
+                    <form class="navbar-left navbar-form nav-search">
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          placeholder="Search ..."
+                          class="form-control"
+                        />
+                      </div>
+                    </form>
+                  </ul>
+                <li class="nav-item topbar-icon dropdown hidden-caret">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="notifDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i class="fa fa-bell"></i>
+                    <span class="notification">1</span>
+                  </a>
+                  <ul
+                    class="dropdown-menu notif-box animated fadeIn"
+                    aria-labelledby="notifDropdown"
+                  >
+                    <li>
+                      <div class="dropdown-title">
+                        You have 1 new notification
+                      </div>
+                    </li>
+                    <li>
+                      <div class="notif-scroll scrollbar-outer">
+                        <div class="notif-center">
+                          <a href="#">
+                            <div class="notif-icon notif-primary">
+                              <i class="fa fa-user-plus"></i>
+                            </div>
+                            <div class="notif-content">
+                              <span class="block"> New Application Received</span>
+                              <span class="time">5 minutes ago</span>
+                            </div>
+                          </a>
+                      </div>
+                    </li>
+                    <li>
+                      <a class="see-all" href="javascript:void(0);"
+                        >See all notifications<i class="fa fa-angle-right"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item topbar-user dropdown hidden-caret">
+                  <a
+                    class="dropdown-toggle profile-pic"
+                    data-bs-toggle="dropdown"
+                    href="#"
+                    aria-expanded="false"
+                  >
+                    <div class="avatar-sm">
+                      <img
+                        src="/dashboard/assets/img/profile/profile.png"
+                        alt="..."
+                        class="avatar-img rounded-circle"
+                      />
+                    </div>
+                    <span class="profile-username">
+                      <span class="fw-bold">Sam</span>
+                    </span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-user animated fadeIn">
+                    <div class="dropdown-user-scroll scrollbar-outer">
+                      <li>
+                        <div class="user-box">
+                          <div class="avatar-lg">
+                            <img
+                            src="/dashboard/assets/img/profile/profile.png"
+                              alt="image profile"
+                              class="avatar-img rounded"
+                            />
+                          </div>
+                          <div class="u-text">
+                            <h4>Sam</h4>
+                            <p class="text-muted">sam123@example.com</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/dashboard/profile.html">My Profile</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                      </li>
+                    </div>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <!-- End Navbar -->
+        </div>
+
+        <div class="container">
+          <div class="page-inner">
+            <!-- Customized Card -->
+            <h3 class="fw-bold mb-3">Created Job Posts</h3>
+            <div class="row">
+              <div class="card card-post card-round" style="max-width: 600px; padding: 10px; margin-right: 20px;">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div class="avatar">
+                      <img src="/enterprise/assets/img/clients/client3.jpg" alt="StepUp Logo" class="avatar-img rounded-circle" style="width: 50px; height: 50px;" />
+                    </div>
+                    <div class="info-post ms-2">
+                      <p class="username" style="font-weight: bold; margin-bottom: 0; margin-left: 15px;">StepUp</p>
+                      <p class="date text-muted" style="font-size: 0.9rem; margin-left: 15px;">Posted on: 20 Dec 2024</p>
+                    </div>
+                  </div>
+                  <div class="separator-solid" style="margin: 15px 0;"></div>
+                  <p class="card-category text-info mb-1">
+                    <a href="#" style="text-decoration: none; font-weight: bold;">Product Manager - Tech Innovations</a>
+                  </p>
+                  <h3 class="card-title" style="font-size: 1.2rem;">
+                    <a href="#" style="text-decoration: none; color: #333;">Lead the Next Gen of Digital Transformation</a>
+                  </h3>
+                  <p class="card-text" style="font-size: 0.95rem; line-height: 1.5;">
+                    StepUp is looking for a dynamic Product Manager to lead tech innovation projects across various industries in India. This role requires leadership and expertise to steer digital transformations with the latest technologies.
+                  </p>
+                  <ul class="job-details" style="padding-left: 20px; font-size: 0.9rem; margin-bottom: 15px;">
+                    <li><strong>Experience:</strong> 5-8 Years</li>
+                    <li><strong>Locations:</strong> Pune</li>
+                    <li><strong>Skills Required:</strong> Product management, Tech strategy, Digital transformation</li>
+                  </ul>
+                  <a href="#" class="btn btn-primary btn-rounded btn-sm" style="padding: 5px 15px; font-size: 0.85rem;">View Details</a>
+                </div>
+              </div>
+              <div class="card card-post card-round" style="max-width: 600px; padding: 10px;">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div class="avatar">
+                      <img src="/enterprise/assets/img/clients/client3.jpg" alt="StepUp Logo" class="avatar-img rounded-circle" style="width: 50px; height: 50px;" />
+                    </div>
+                    <div class="info-post ms-2">
+                      <p class="username" style="font-weight: bold; margin-bottom: 0; margin-left: 15px;">StepUp</p>
+                      <p class="date text-muted" style="font-size: 0.9rem; margin-left: 15px;">Posted on: 22 Dec 2024</p>
+                    </div>
+                  </div>
+                  <div class="separator-solid" style="margin: 15px 0;"></div>
+                  <p class="card-category text-info mb-1">
+                    <a href="#" style="text-decoration: none; font-weight: bold;">UI/UX Designer - Mobile Applications</a>
+                  </p>
+                  <h3 class="card-title" style="font-size: 1.2rem;">
+                    <a href="#" style="text-decoration: none; color: #333;">Create Impactful User Experiences</a>
+                  </h3>
+                  <p class="card-text" style="font-size: 0.95rem; line-height: 1.5;">
+                    StepUp is hiring a talented UI/UX Designer to join their mobile app development team. The role involves designing intuitive, user-friendly interfaces and enhancing mobile user experiences across platforms.
+                  </p>
+                  <ul class="job-details" style="padding-left: 20px; font-size: 0.9rem; margin-bottom: 15px;">
+                    <li><strong>Experience:</strong> 3-5 Years</li>
+                    <li><strong>Locations:</strong> Delhi NCR, Mumbai</li>
+                    <li><strong>Skills Required:</strong> Figma, Adobe XD, Mobile UI/UX Design</li>
+                  </ul>
+                  <a href="#" class="btn btn-primary btn-rounded btn-sm" style="padding: 5px 15px; font-size: 0.85rem;">View Details</a>
+                </div>
+              </div>       
+            </div>
+            <div class="row">
+              <div class="card card-post card-round" style="max-width: 600px; padding: 10px; margin-right: 20px;">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div class="avatar">
+                      <img src="/enterprise/assets/img/clients/client3.jpg" alt="StepUp Logo" class="avatar-img rounded-circle" style="width: 50px; height: 50px;" />
+                    </div>
+                    <div class="info-post ms-2">
+                      <p class="username" style="font-weight: bold; margin-bottom: 0; margin-left: 15px;">StepUp</p>
+                      <p class="date text-muted" style="font-size: 0.9rem; margin-left: 15px;">Posted on: 23 Dec 2024</p>
+                    </div>
+                  </div>
+                  <div class="separator-solid" style="margin: 15px 0;"></div>
+                  <p class="card-category text-info mb-1">
+                    <a href="#" style="text-decoration: none; font-weight: bold;">Data Analyst - Business Intelligence</a>
+                  </p>
+                  <h3 class="card-title" style="font-size: 1.2rem;">
+                    <a href="#" style="text-decoration: none; color: #333;">Analyze Data, Drive Decisions</a>
+                  </h3>
+                  <p class="card-text" style="font-size: 0.95rem; line-height: 1.5;">
+                    StepUp is looking for a Data Analyst to help transform business decisions with data-driven insights. In this role, you'll work with large datasets to help enhance business intelligence and reporting strategies.
+                  </p>
+                  <ul class="job-details" style="padding-left: 20px; font-size: 0.9rem; margin-bottom: 15px;">
+                    <li><strong>Experience:</strong> 2-4 Years</li>
+                    <li><strong>Locations:</strong> Pune</li>
+                    <li><strong>Skills Required:</strong> SQL, Data Visualization, Business Intelligence Tools</li>
+                  </ul>
+                  <a href="#" class="btn btn-primary btn-rounded btn-sm" style="padding: 5px 15px; font-size: 0.85rem;">View Details</a>
+                </div>
+              </div>
+              <div class="card card-post card-round" style="max-width: 600px; padding: 10px;">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div class="avatar">
+                      <img src="/enterprise/assets/img/clients/client3.jpg" alt="StepUp Logo" class="avatar-img rounded-circle" style="width: 50px; height: 50px;" />
+                    </div>
+                    <div class="info-post ms-2">
+                      <p class="username" style="font-weight: bold; margin-bottom: 0; margin-left: 15px;">StepUp</p>
+                      <p class="date text-muted" style="font-size: 0.9rem; margin-left: 15px;">Posted on: 25 Dec 2024</p>
+                    </div>
+                  </div>
+                  <div class="separator-solid" style="margin: 15px 0;"></div>
+                  <p class="card-category text-info mb-1">
+                    <a href="#" style="text-decoration: none; font-weight: bold;">Sales Executive - Cloud Solutions</a>
+                  </p>
+                  <h3 class="card-title" style="font-size: 1.2rem;">
+                    <a href="#" style="text-decoration: none; color: #333;">Shape the Future of Cloud Computing</a>
+                  </h3>
+                  <p class="card-text" style="font-size: 0.95rem; line-height: 1.5;">
+                    StepUp is looking for a Sales Executive to drive sales of its cloud computing solutions. The ideal candidate will have a strong background in sales and a passion for cloud technologies.
+                  </p>
+                  <ul class="job-details" style="padding-left: 20px; font-size: 0.9rem; margin-bottom: 15px;">
+                    <li><strong>Experience:</strong> 3-5 Years</li>
+                    <li><strong>Locations:</strong> Mumbai, Pune</li>
+                    <li><strong>Skills Required:</strong> Sales experience, Cloud technology knowledge, CRM tools</li>
+                  </ul>
+                  <a href="#" class="btn btn-primary btn-rounded btn-sm" style="padding: 5px 15px; font-size: 0.85rem;">View Details</a>
+                </div>
+              </div>       
+            </div>
+                                   
+          </div>
+        </div>
+    </div>
+    <!--   Core JS Files   -->
+    <script src="assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/core/popper.min.js"></script>
+    <script src="assets/js/core/bootstrap.min.js"></script>
+    <!-- jQuery Scrollbar -->
+    <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <!-- jQuery Sparkline -->
+    <script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+    <!-- Kaiadmin JS -->
+    <script src="assets/js/kaiadmin.min.js"></script>
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="assets/js/setting-demo.js"></script>
+    <script>
+      $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "#177dff",
+        fillColor: "rgba(23, 125, 255, 0.14)",
+      });
+
+      $("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "#f3545d",
+        fillColor: "rgba(243, 84, 93, .14)",
+      });
+
+      $("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "#ffa534",
+        fillColor: "rgba(255, 165, 52, .14)",
+      });
+
+      $("#lineChart4").sparkline([102, 109, 120, 99, 110, 105, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "rgba(255, 255, 255, .5)",
+        fillColor: "rgba(255, 255, 255, .15)",
+      });
+
+      $("#lineChart5").sparkline([99, 125, 122, 105, 110, 124, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "rgba(255, 255, 255, .5)",
+        fillColor: "rgba(255, 255, 255, .15)",
+      });
+
+      $("#lineChart6").sparkline([105, 103, 123, 100, 95, 105, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "rgba(255, 255, 255, .5)",
+        fillColor: "rgba(255, 255, 255, .15)",
+      });
+    </script>
+  </body>
+</html>
